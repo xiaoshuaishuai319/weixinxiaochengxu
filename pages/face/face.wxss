@@ -2,7 +2,6 @@
   width: 100%;
   height: 360rpx;
 }
-
 .container {
   margin-top: -50px;
   background-image: url("https://www.xsshome.cn/timg.jpg");
