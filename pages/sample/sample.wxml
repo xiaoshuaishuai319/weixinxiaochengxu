@@ -1,0 +1,7 @@
+<!--pages/sample/sample.wxml-->
+<text>welcome</text>
+<view>
+  <navigator url="../index/index">跳转到新页面</navigator>
+  <navigator url="../index/index" open-type="redirect">在当前页打开</navigator>
+  <navigator url="../index/index" open-type="switchTab">切换到首页Tab</navigator>
+</view>
