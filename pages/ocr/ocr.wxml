@@ -1,0 +1,27 @@
+<view class="classname">
+<view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">接口类型</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="weui-input">{{array[index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      </view>
+      </view>
+  <view class="container">
+  <view bindtap="uploads">
+    <button class="up">拍照选取</button>
+  </view>
+  <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{img}}"></image>
+  <button type="warn" bindtap="changeinfo">{{info}}</button>
+  <text class="user-beauty">{{ocrtexts}}</text>
+   <text class="user-remark">{{remark}}</text>
+</view>
+</view>

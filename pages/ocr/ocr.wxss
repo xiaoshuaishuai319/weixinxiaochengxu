@@ -1,0 +1,29 @@
+/* pages/ocr/ocr.wxss */
+@import "../common/weui.wxss";
+.picker{
+  padding: 19rpx 26rpx;
+  background-color: #e6e6e6;
+  font-family: 微软雅黑;
+  align-content: center;
+
+}
+.container{
+  margin-top:-50px;
+  background-image:url("https://www.xsshome.cn/timg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position:bottom;
+  background-position-x: right;
+}
+.up{
+  color:rgb(255,255,255);
+  font-size: 12px;
+  font-family: 微软雅黑;
+  width: 80px;
+  height: 80px;
+  vertical-align:middle;
+  text-align:center;
+  line-height:75px;
+  border-radius:50%;
+  background-color: rgb(26, 160, 225);
+}
