@@ -21,7 +21,7 @@
   </view>
   <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{img}}"></image>
   <button type="warn" bindtap="changeinfo">{{info}}</button>
-  <text class="user-beauty">{{ocrtexts}}</text>
+  <text class="user-beauty" selectable="true">{{ocrtexts}}</text>
    <text class="user-remark">{{remark}}</text>
 </view>
 </view>
