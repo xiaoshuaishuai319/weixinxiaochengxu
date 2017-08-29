@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/chram/chram",
-    "pages/face/face"
+    "pages/face/face",
+    "pages/ocr/ocr"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -24,6 +25,11 @@
       "iconPath": "image/icon_component.png",
       "selectedIconPath": "image/icon_component_HL.png",
       "text": "颜值打分(百度)"
+    },{
+      "pagePath": "pages/ocr/ocr",
+      "iconPath": "image/OCR.png",
+      "selectedIconPath": "image/OCR_HL.png",
+      "text": "图片文字识别(百度)"
     }]
   }
 }
