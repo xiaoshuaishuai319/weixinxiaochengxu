@@ -9,7 +9,7 @@ Page( {
     info:"点击查看魅力",
     ages:"",
     beautys:"",
-    remark:"腾讯服务较慢耐心等待哦"
+    remark:""
   },
     onShareAppMessage: function () {
     return {
@@ -37,15 +37,24 @@ Page( {
   },
   changeinfo:function(){
     console.info(age);
+    var that = this;
+    var imgdata = that.data.img;
     if(age!=""){
       this.setData({
         ages:"年龄："+" "+age,
         beautys:"魅力："+" "+beauty
       })
     }else{
-       this.setData({
-        ages:"不着急等待1-2秒再点击",
-      })
+      if (imgdata == null) {
+        wx.showModal({
+          title: '友情提示',
+          content: '亲，您还没有选取图片呢'
+        })
+      } else {
+        this.setData({
+          ages: "不着急等待1-2秒再点击",
+        })
+      }
     }
 
   },

@@ -2,7 +2,9 @@
   "pages":[
     "pages/chram/chram",
     "pages/face/face",
-    "pages/ocr/ocr"
+    "pages/ocr/ocr",
+    "pages/car/car",
+    "pages/dish/dish"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -19,17 +21,30 @@
       "pagePath": "pages/chram/chram",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
-      "text": "魅力值(腾讯)"
+      "text": "魅力值"
     },{
       "pagePath": "pages/face/face",
       "iconPath": "image/icon_component.png",
       "selectedIconPath": "image/icon_component_HL.png",
-      "text": "颜值打分(百度)"
+      "text": "颜值打分"
     },{
       "pagePath": "pages/ocr/ocr",
       "iconPath": "image/OCR.png",
       "selectedIconPath": "image/OCR_HL.png",
-      "text": "图片文字识别(百度)"
+      "text": "文字识别"
+    }
+    ,
+    {
+      "pagePath": "pages/dish/dish",
+      "iconPath": "image/dish.png",
+      "selectedIconPath": "image/dish_HL.png",
+      "text": "菜品识别"
+    },
+    {
+      "pagePath": "pages/car/car",
+      "iconPath": "image/car.png",
+      "selectedIconPath": "image/car_HL.png",
+      "text": "车型识别"
     }]
   }
 }

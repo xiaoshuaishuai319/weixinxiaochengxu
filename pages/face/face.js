@@ -37,15 +37,24 @@ Page({
   },
   changeinfo: function () {
     console.info(age);
+    var that = this;
+    var imgdata = that.data.img;
     if (age != "") {
       this.setData({
         ages: "年龄：" + " " + age,
         beautys: "颜值：" + " " + beauty
       })
     } else {
-      this.setData({
-        ages: "不着急等待1-2秒再点击",
-      })
+      if (imgdata == null) {
+        wx.showModal({
+          title: '友情提示',
+          content: '亲，您还没有选取图片呢'
+        })
+      } else {
+        this.setData({
+          ages: "不着急等待1-2秒再点击",
+        })
+      }
     }
   },
   //事件处理函数
