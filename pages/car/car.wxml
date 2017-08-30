@@ -1,0 +1,10 @@
+<view class="container">
+  <view bindtap="uploads">
+    <button class="up">拍照</button>
+  </view>
+  <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{img}}"></image>
+  <button type="warn" bindtap="changeinfo">{{info}}</button>
+  <!--<button type="clear" bindtap="clear">删除文件</button>-->
+  <text class="user-names">{{names}}</text>
+  <text class="user-calories">{{scores}}</text>
+</view>
