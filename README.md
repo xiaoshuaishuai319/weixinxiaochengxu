@@ -8,3 +8,5 @@
 #image 一些需要的图片
 ![小程序专属二维码](https://www.xsshome.cn/xcx.jpg "小程序专属二维码")
 ![小程序截图](https://www.xsshome.cn/index.png "小程序截图")
+![新版截图](https://git.oschina.net/uploads/images/2017/0907/153234_9b2a70f4_131538.jpeg "index.jpg")
+![OCR截图](https://git.oschina.net/uploads/images/2017/0907/153252_dada7a51_131538.jpeg "ocr.jpg")
