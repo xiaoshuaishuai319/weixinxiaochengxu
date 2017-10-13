@@ -4,7 +4,6 @@
   </view>
   <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{img}}"></image>
   <button type="warn" bindtap="changeinfo">{{info}}</button>
-  <!--<button type="clear" bindtap="clear">删除文件</button>-->
   <text class="user-names">{{names}}</text>
   <text class="user-calories">{{calories}}</text>
   <text class="user-probabilitys">{{probabilitys}}</text>

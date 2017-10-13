@@ -38,6 +38,10 @@ Page({
       }
     }
   },
+  clear:function(event){
+    console.info(event);
+    wx.clearStorage();
+  },
   changeinfo: function () {
     console.info(name);
     var that = this;

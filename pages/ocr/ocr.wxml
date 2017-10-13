@@ -22,6 +22,9 @@
   <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{img}}"></image>
   <button type="warn" bindtap="changeinfo">{{info}}</button>
   <text class="user-beauty" selectable="true">{{ocrtexts}}</text>
+  <text class="user-beauty" selectable="true">{{bank_card_numbers}}</text>
+  <text class="user-beauty" selectable="true">{{bank_card_types}}</text>
+  <text class="user-beauty" selectable="true">{{bank_names}}</text>
    <text class="user-remark">{{remark}}</text>
 </view>
 </view>

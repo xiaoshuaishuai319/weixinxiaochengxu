@@ -1,5 +1,8 @@
 // pages/ocr/ocr.js
 var ocrtext="";
+var bank_card_number;
+var bank_card_type;
+var bank_name;
 Page({
 
   /**
@@ -9,18 +12,26 @@ Page({
     array: ['通用OCR', '通用OCR（含位置信息版）', '通用OCR（含生僻字版）', '通用OCR（高精度版）', '通用OCR（含位置高精度版）', '身份证OCR（正面）', '身份证OCR（背面）', '银行卡OCR', '驾驶证OCR', '行驶证OCR', '网图OCR', '营业执照OCR', '车牌OCR', '彩票OCR', '公式OCR', '通用票据OCR', '表格OCR（提交）','表格OCR（获取）'],
     index: 0,
     ocrtexts:"",
+    bank_card_numbers:"",
+    bank_card_types:"",
+    bank_names:"",
     info:"点击查看识别内容"
   },
   bindPickerChange:function(e){
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      ocrtexts: "",
+      bank_card_numbers: "",
+      bank_card_types: "",
+      bank_names: ""
     })
     console.log('picker发送选择改变，携带值为', e.detail.value);
     var ocrindex = e.detail.value;
-    if (ocrindex != "0") {
+    console.info(ocrindex);
+    if (ocrindex != '0'&&ocrindex!='7') {
       wx.showModal({
         title: '温馨提示',
-        content: '目前只有 通用OCR 可以调戏哦！'
+        content: '目前只有通用OCR,银行卡识别可用 '
       })
     } 
   },
@@ -28,10 +39,23 @@ Page({
     console.info(ocrtext);
      var that = this;
      var imgdata = that.data.img;
+     var ocrindex = that.data.index;
     if (ocrtext != "") {
-      this.setData({
-        ocrtexts: "识别的内容：" + " " + ocrtext
-      })
+      if(ocrindex=='7'){
+        this.setData({
+          ocrtexts:"",
+          bank_card_numbers: "卡号：" + " " + bank_card_number,
+          bank_card_types: "卡类型:" + " " + bank_card_type,
+          bank_names: "银行名:" + " " + bank_name
+        })
+      }else{
+        this.setData({
+          bank_card_numbers:"",
+          bank_card_types:"",
+          bank_names:"",
+          ocrtexts: "识别的内容：" + " " + ocrtext
+        })
+      }
     } else {
       if (imgdata==null){
         wx.showModal({
@@ -56,11 +80,13 @@ Page({
     var that = this;
     console.info(that);
     var ocrindex = that.data.index;
-    if(ocrindex!="0"){
+    console.info(ocrindex);
+    if (ocrindex != '7'&&ocrindex != '0') {
       wx.showModal({
         title: '友情提示',
-        content: '亲，目前只有 通用OCR可用哦'
+        content: '目前只有通用OCR,银行卡识别可用 '
       })
+      ocrindex = 0;
     }else{
       console.info(ocrindex);
     wx.chooseImage({
@@ -75,6 +101,7 @@ Page({
         })
         wx.uploadFile({
           url: 'https://www.xsshome.cn/xcx/uploadBOCR',
+          //url:'http://192.168.10.241:9080/xcx/uploadBOCR',
           filePath: res.tempFilePaths[0],
           header: {
             'content-type': 'multipart/form-data'
@@ -85,10 +112,18 @@ Page({
             'ocrtype': ocrindex
           },
           success: function (res) {
+            console.info(res);
             var data = res.data;
             var str = JSON.parse(data);
-            console.log(str);
+            if(ocrindex=='7'){
+              bank_card_number = str.bank_card_number;
+                bank_card_type = str.bank_card_type;
+                bank_name = str.bank_name;
+                ocrtext = str.words;
+            }else{
             ocrtext = str.words;
+            }
+            console.log(str);
           },
           fail: function (res) {
             console.log(res)

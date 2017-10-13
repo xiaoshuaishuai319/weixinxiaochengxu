@@ -1,10 +1,18 @@
 {
   "pages":[
+    "pages/nine/nine",
     "pages/chram/chram",
     "pages/face/face",
     "pages/ocr/ocr",
+    "pages/dish/dish",
     "pages/car/car",
-    "pages/dish/dish"
+    "pages/plant/plant",
+    "pages/animal/animal",
+    "pages/subject/subject",
+    "pages/cardamage/cardamage",
+    "pages/object/object",
+    "pages/logo/logo",
+    "pages/resemble/resemble"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -14,7 +22,7 @@
   },
    "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#1BA0E1",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [{
@@ -24,27 +32,20 @@
       "text": "魅力值"
     },{
       "pagePath": "pages/face/face",
-      "iconPath": "image/icon_component.png",
-      "selectedIconPath": "image/icon_component_HL.png",
+      "iconPath": "image/Face.png",
+      "selectedIconPath": "image/Face_HL.png",
       "text": "颜值打分"
+    },
+    {
+      "pagePath": "pages/nine/nine",
+      "iconPath": "image/image.png",
+      "selectedIconPath": "image/image_HL.png",
+      "text": "图像识别"
     },{
       "pagePath": "pages/ocr/ocr",
       "iconPath": "image/OCR.png",
       "selectedIconPath": "image/OCR_HL.png",
       "text": "文字识别"
-    }
-    ,
-    {
-      "pagePath": "pages/dish/dish",
-      "iconPath": "image/dish.png",
-      "selectedIconPath": "image/dish_HL.png",
-      "text": "菜品识别"
-    },
-    {
-      "pagePath": "pages/car/car",
-      "iconPath": "image/car.png",
-      "selectedIconPath": "image/car_HL.png",
-      "text": "车型识别"
     }]
   }
 }
