@@ -3,10 +3,10 @@ var age = "";
 var beauty = "";
 Page({
   data: {
-    motto: '识别人脸Demo',
+    motto: '检测人脸',
     userInfo: {},
     images: {},
-    info: "点击查看分析",
+    info: "点击查看分数",
     ages: "",
     beautys: "",
     remark: "等待1-2秒查看分析"
@@ -35,28 +35,6 @@ Page({
       }
     }
   },
-  changeinfo: function () {
-    console.info(age);
-    var that = this;
-    var imgdata = that.data.img;
-    if (age != "") {
-      this.setData({
-        ages: "年龄：" + " " + age,
-        beautys: "颜值：" + " " + beauty
-      })
-    } else {
-      if (imgdata == null) {
-        wx.showModal({
-          title: '友情提示',
-          content: '亲，您还没有选取图片呢'
-        })
-      } else {
-        this.setData({
-          ages: "不着急等待1-2秒再点击",
-        })
-      }
-    }
-  },
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
@@ -73,8 +51,13 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         //console.log( res )
         that.setData({
-          img: res.tempFilePaths[0]
-        })
+          img: res.tempFilePaths[0],
+          ages: "",
+          beautys: "",
+        }),
+          wx.showLoading({
+            title: "魅力年龄分析中..."
+          }),
         wx.uploadFile({
           url: 'https://www.xsshome.cn/xcx/upload',
           filePath: res.tempFilePaths[0],
@@ -86,14 +69,28 @@ Page({
             'user': 'test'
           },
           success: function (res) {
+            wx.hideLoading();
             var data = res.data;
             var str = JSON.parse(data);
             console.log(str);
-            age = str.age;
-            beauty = str.beauty;
+            var age = str.age;
+            if (age != "") {
+              that.setData({
+                ages: "年龄：" + " " + str.age.substring(0,5),
+                beautys: "魅力：" + " " + str.beauty.substring(0, 5)
+              })
+            } else {
+              that.setData({
+                ages: 'Sorry 未能分析出人脸信息'
+              })
+            }
           },
           fail: function (res) {
+            wx.hideLoading();
             console.log(res)
+            that.setData({
+              ages: '小程序离家出走了稍后再试'
+            })
           }
         })
       }

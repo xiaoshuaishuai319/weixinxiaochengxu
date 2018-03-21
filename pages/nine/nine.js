@@ -58,7 +58,13 @@ Page({
         id: '8',
         name: '相似相同图像搜索',
         url: '../../pages/resemble/resemble',
-        icon: '../../image/equal_Hl.png'
+        icon: '../../image/equal_HL.png'
+      },
+      {
+        id: '9',
+        name: '食材识别',
+        url: '../../pages/ingredient/ingredient',
+        icon: '../../image/ingredient_HL.png'
       }
     ]
   },
@@ -90,6 +96,10 @@ Page({
     } else if (route == 7) {
       wx.navigateTo({
         url: '/pages/logo/logo',
+      })
+    } else if (route == 9){
+      wx.navigateTo({
+        url: '/pages/ingredient/ingredient',
       })
     } else {
       wx.showModal({
@@ -153,6 +163,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+      return{
+        title:'X-AI玩转图像、文字、人脸识别'
+      }
   }
 })

@@ -35,29 +35,6 @@ Page( {
       }
     }
   },
-  changeinfo:function(){
-    console.info(age);
-    var that = this;
-    var imgdata = that.data.img;
-    if(age!=""){
-      this.setData({
-        ages:"年龄："+" "+age,
-        beautys:"魅力："+" "+beauty
-      })
-    }else{
-      if (imgdata == null) {
-        wx.showModal({
-          title: '友情提示',
-          content: '亲，您还没有选取图片呢'
-        })
-      } else {
-        this.setData({
-          ages: "不着急等待1-2秒再点击",
-        })
-      }
-    }
-
-  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo( {
@@ -73,9 +50,14 @@ Page( {
       success: function( res ) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         //console.log( res )
-       that.setData({
-         img:res.tempFilePaths[ 0 ]
-       })
+        that.setData({
+          img: res.tempFilePaths[0],
+          ages: "",
+          beautys: "",
+        }),
+          wx.showLoading({
+          title: "魅力年龄分析中..."
+          }),
         wx.uploadFile( {
           url: 'https://www.xsshome.cn/xcx/uploadT',
           filePath: res.tempFilePaths[ 0 ],
@@ -87,14 +69,28 @@ Page( {
             'user': 'test'
           },
           success: function(res) {
+            wx.hideLoading();
             var data = res.data;
             var str=JSON.parse(data);
+            var age = str.age;
             console.log(str);
-            age = str.age;
-            beauty=str.beauty;
+            if (age != "") {
+              that.setData({
+                ages: "年龄：" + " " + str.age,
+                beautys: "魅力：" + " " + str.beauty
+              })
+            } else {
+              that.setData({
+                ages: 'Sorry 未能分析出人脸信息'
+              })
+            }
           },
           fail:function(res){
+            wx.hideLoading();
             console.log( res )
+            that.setData({
+              ages: '小程序离家出走了稍后再试'
+            })
           }
         })
       }

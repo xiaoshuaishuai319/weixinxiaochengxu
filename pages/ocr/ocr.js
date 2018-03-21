@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: ['通用OCR', '通用OCR（含位置信息版）', '通用OCR（含生僻字版）', '通用OCR（高精度版）', '通用OCR（含位置高精度版）', '身份证OCR（正面）', '身份证OCR（背面）', '银行卡OCR', '驾驶证OCR', '行驶证OCR', '网图OCR', '营业执照OCR', '车牌OCR', '彩票OCR', '公式OCR', '通用票据OCR', '表格OCR（提交）','表格OCR（获取）'],
+    array: ['通用OCR', '通用OCR（含位置信息版）', '通用OCR（含生僻字版）', '通用OCR（高精度版）', '通用OCR（含位置高精度版）', '身份证OCR（正面）', '身份证OCR（背面）', '银行卡OCR', '驾驶证OCR', '行驶证OCR', '网图OCR', '营业执照OCR', '车牌OCR', '彩票OCR', '公式OCR', '通用票据OCR', '表格OCR（提交）', '表格OCR（获取）', '手写字体识别'],
     index: 0,
     ocrtexts:"",
     bank_card_numbers:"",
@@ -28,52 +28,32 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value);
     var ocrindex = e.detail.value;
     console.info(ocrindex);
-    if (ocrindex != '0'&&ocrindex!='7') {
+    if (ocrindex != '0' && ocrindex != '7' && ocrindex != '18') {
       wx.showModal({
         title: '温馨提示',
-        content: '目前只有通用OCR,银行卡识别可用 '
+        showCancel: false,
+        content: '目前只有通用OCR,银行卡识别,手写字体识别可用 ',
+        success: function (res) {
+          this.setData({
+            ocrindex:'0',
+          })
+        },
+        fail: function (res) {
+          this.setData({
+            ocrindex:'0',
+          })
+        }
       })
     } 
-  },
-  changeinfo: function () {
-    console.info(ocrtext);
-     var that = this;
-     var imgdata = that.data.img;
-     var ocrindex = that.data.index;
-    if (ocrtext != "") {
-      if(ocrindex=='7'){
-        this.setData({
-          ocrtexts:"",
-          bank_card_numbers: "卡号：" + " " + bank_card_number,
-          bank_card_types: "卡类型:" + " " + bank_card_type,
-          bank_names: "银行名:" + " " + bank_name
-        })
-      }else{
-        this.setData({
-          bank_card_numbers:"",
-          bank_card_types:"",
-          bank_names:"",
-          ocrtexts: "识别的内容：" + " " + ocrtext
-        })
-      }
-    } else {
-      if (imgdata==null){
-        wx.showModal({
-          title: '友情提示',
-          content: '亲，您还没有选取图片呢'
-        })
-      }else{
-        this.setData({
-          ocrtexts: "不着急等待1-2秒再点击",
-        })
-      }
-    }
   },
   clear:function(){
     var that = this;
     console.info(that);
     this.setData({
-      img:""
+      ocrtexts: "",
+      bank_card_numbers: "",
+      bank_card_types: "",
+      bank_names: ""
     })  
   },
   uploads: function () {
@@ -81,12 +61,22 @@ Page({
     console.info(that);
     var ocrindex = that.data.index;
     console.info(ocrindex);
-    if (ocrindex != '7'&&ocrindex != '0') {
+    if (ocrindex != '7' && ocrindex != '0' && ocrindex != '18') {
       wx.showModal({
         title: '友情提示',
-        content: '目前只有通用OCR,银行卡识别可用 '
+        showCancel:false,
+        content: '目前只有通用OCR,银行卡识别,手写字体识别可用 ',
+        success:function(res){
+          that.setData({
+            ocrindex: 0,
+          })
+        },
+        fail:function(res){
+          that.setData({
+            ocrindex: 0,
+          })
+        }
       })
-      ocrindex = 0;
     }else{
       console.info(ocrindex);
     wx.chooseImage({
@@ -97,11 +87,17 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         //console.log( res )
         that.setData({
-          img: res.tempFilePaths[0]
+          img: res.tempFilePaths[0],
+          ocrtexts: "",
+          bank_card_numbers: "",
+          bank_card_types: "",
+          bank_names: ""
         })
+        wx.showLoading({
+          title: "努力识别中..."
+        }),
         wx.uploadFile({
           url: 'https://www.xsshome.cn/xcx/uploadBOCR',
-          //url:'http://192.168.10.241:9080/xcx/uploadBOCR',
           filePath: res.tempFilePaths[0],
           header: {
             'content-type': 'multipart/form-data'
@@ -112,21 +108,39 @@ Page({
             'ocrtype': ocrindex
           },
           success: function (res) {
+            wx.hideLoading();
             console.info(res);
             var data = res.data;
             var str = JSON.parse(data);
             if(ocrindex=='7'){
-              bank_card_number = str.bank_card_number;
-                bank_card_type = str.bank_card_type;
-                bank_name = str.bank_name;
-                ocrtext = str.words;
+              that.setData({
+                  ocrtexts: "",
+                  bank_card_numbers: "卡号：" + " " + str.bank_card_number,
+                  bank_card_types: "卡类型:" + " " + str.bank_card_type,
+                  bank_names: "银行名:" + " " + str.bank_name
+                })
+            }else if(ocrindex=='18'){
+              that.setData({
+                bank_card_numbers: "",
+                bank_card_types: "",
+                bank_names: "",
+                ocrtexts: "识别的内容：" + " " + str.words
+              })
             }else{
-            ocrtext = str.words;
+              that.setData({
+                bank_card_numbers: "",
+                bank_card_types: "",
+                bank_names: "",
+                ocrtexts: "识别的内容：" + " " + str.words
+              })
             }
-            console.log(str);
           },
           fail: function (res) {
-            console.log(res)
+            wx.hideLoading();
+            console.log(res);
+            that.setData({
+              names: '小程序离家出走了稍后再试',
+            })
           }
         })
       }

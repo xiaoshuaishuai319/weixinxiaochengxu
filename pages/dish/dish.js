@@ -42,35 +42,6 @@ Page({
     console.info(event);
     wx.clearStorage();
   },
-  changeinfo: function () {
-    console.info(name);
-    var that = this;
-    var imgdata = that.data.img;
-    if (words=="success") {
-      this.setData({
-        names: "名称：" + " " + name,
-        calories: "卡路里：" + " " + calorie,
-        probabilitys: "可信度：" + " " + probability
-      })
-    } else {
-      if (imgdata == null) {
-        wx.showModal({
-          title: '友情提示',
-          content: '亲，您还没有选取图片呢'
-        })
-      } else {
-        if(words!=""&&words!="success"){
-          this.setData({
-            names:words,
-          })
-        }else{
-          this.setData({
-            names: "不着急等待1-2秒再点击",
-          })
-        }
-      }
-    }
-  },
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
@@ -87,8 +58,13 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         //console.log( res )
         that.setData({
-          img: res.tempFilePaths[0]
-        })
+          img: res.tempFilePaths[0],
+          names: '',
+          scores: ''
+        }),
+          wx.showLoading({
+            title: "努力分析中..."
+          }),
         wx.uploadFile({
           url: 'https://www.xsshome.cn/xcx/uploadBDISH',
           filePath: res.tempFilePaths[0],
@@ -100,16 +76,29 @@ Page({
             'user': 'test'
           },
           success: function (res) {
+            wx.hideLoading();
             var data = res.data;
             var str = JSON.parse(data);
             console.log(str);
-            name = str.name;
-            calorie = str.calorie;
-            probability = str.probability;
             words = str.words;
+            if (str.words == "success") {
+              that.setData({
+                names: "名称：" + " " + str.name,
+                calories: "卡路里：" + " " + str.calorie,
+                probabilitys: "可信度：" + " " + str.probability
+              })
+            } else {
+              that.setData({
+                names: str.words,
+              })
+            }
           },
           fail: function (res) {
-            console.log(res)
+            wx.hideLoading();
+            console.log(res);
+            that.setData({
+              names: '小程序离家出走了稍后再试',
+            })
           }
         })
       }

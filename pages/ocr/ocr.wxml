@@ -15,16 +15,16 @@
       </view>
       </view>
       </view>
-  <view class="container">
-  <view bindtap="uploads">
-    <button class="up">拍照选取</button>
-  </view>
-  <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="{{img}}"></image>
-  <button type="warn" bindtap="changeinfo">{{info}}</button>
+<view class="container">
+<view class="img_wrap">
+    <image src="{{ img }}" mode='aspectFit'/>
+</view>
+<button bindtap="uploads" class="up">拍照/选取图片识别</button>
   <text class="user-beauty" selectable="true">{{ocrtexts}}</text>
   <text class="user-beauty" selectable="true">{{bank_card_numbers}}</text>
   <text class="user-beauty" selectable="true">{{bank_card_types}}</text>
   <text class="user-beauty" selectable="true">{{bank_names}}</text>
    <text class="user-remark">{{remark}}</text>
+ </view>
 </view>
-</view>
+

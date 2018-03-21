@@ -36,34 +36,6 @@ Page({
       }
     }
   },
-  changeinfo: function () {
-    console.info(name);
-    var that = this;
-    var imgdata = that.data.img;
-    if (words == "success") {
-      this.setData({
-        names: "名称：" + " " + name,
-        scores: "可信度：" + " " + score
-      })
-    } else {
-      if (imgdata == null) {
-        wx.showModal({
-          title: '友情提示',
-          content: '亲，您还没有选取图片呢'
-        })
-      } else {
-        if (words != "" && words != "success") {
-          this.setData({
-            names: words,
-          })
-        } else {
-          this.setData({
-            names: "不着急等待1-2秒再点击",
-          })
-        }
-      }
-    }
-  },
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
@@ -96,12 +68,22 @@ Page({
             var data = res.data;
             var str = JSON.parse(data);
             console.log(str);
-            name = str.name;
-            score = str.score;
-            words = str.words;
+            if (str.words == "success") {
+              that.setData({
+                names: "车型名称：" + " " + str.name,
+                scores: "可信度：" + " " + str.score
+              })
+            } else {
+              that.setData({
+                names: str.words,
+              })
+            }
           },
           fail: function (res) {
             console.log(res)
+            that.setData({
+              names: '小程序离家出走了稍后再试',
+            })
           }
         })
       }

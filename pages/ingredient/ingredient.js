@@ -4,7 +4,7 @@ var score = "";
 var words = "";
 Page({
   data: {
-    motto: '动物识别',
+    motto: '食材识别',
     userInfo: {},
     images: {},
     info: "点击查看识别结果",
@@ -14,7 +14,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '动物识别小程序',
+      title: '食材识别小程序',
       path: '/pages/plant/plant',
       success: function (res) {
         if (res.errMsg == 'shareAppMessage:ok') {
@@ -60,11 +60,11 @@ Page({
           names: '',
           scores: ''
         }),
-        wx.showLoading({
+          wx.showLoading({
             title: "努力分析中..."
-        }),
+          }),
         wx.uploadFile({
-          url: 'https://www.xsshome.cn/xcx/image/uploadBDANIMAL',
+          url: 'https://www.xsshome.cn/xcx/image/uploadBDINGREDIENT',
           filePath: res.tempFilePaths[0],
           header: {
             'content-type': 'multipart/form-data'
@@ -80,7 +80,7 @@ Page({
             console.log(str);
             if (str.words == "success") {
               that.setData({
-                names: "动物名称：" + " " + str.name,
+                names: "食材名称：" + " " + str.name,
                 scores: "可信度：" + " " + str.score
               })
             } else {

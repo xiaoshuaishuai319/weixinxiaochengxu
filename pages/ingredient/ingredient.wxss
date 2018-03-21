@@ -39,22 +39,21 @@ button {
   border-radius: 25px;
   background-color: rgb(26, 160, 225);
 }
-
 .user-motto {
   font-family: 微软雅黑;
 }
 
 .user-names {
   font-family: 微软雅黑;
-  color: rgb(212,35,122);
+  color: rgb(0, 197, 198);
 }
 .user-calories{
  font-family: 微软雅黑;
- color: rgb(212,35,122);
+ color: rgb(0, 197, 198);
 }
 .user-probabilitys{
  font-family: 微软雅黑;
- color: rgb(212,35,122);
+ color: rgb(0, 197, 198);
 }
 .user-remark {
   font-family: 微软雅黑;

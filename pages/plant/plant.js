@@ -84,8 +84,13 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         //console.log( res )
         that.setData({
-          img: res.tempFilePaths[0]
-        })
+          img: res.tempFilePaths[0],
+          names: '',
+          scores: ''
+        }),
+          wx.showLoading({
+            title: "努力识别中..."
+          }),
         wx.uploadFile({
           url: 'https://www.xsshome.cn/xcx/image/uploadBDPLANT',
           filePath: res.tempFilePaths[0],
@@ -97,15 +102,27 @@ Page({
             'user': 'test'
           },
           success: function (res) {
+            wx.hideLoading();
             var data = res.data;
             var str = JSON.parse(data);
             console.log(str);
-            name = str.name;
-            score = str.score;
-            words = str.words;
+            if (str.words == "success") {
+              that.setData({
+                names: "植物名称：" + " " + str.name,
+                scores: "可信度：" + " " + str.score
+              })
+            } else {
+              that.setData({
+                names: str.words,
+              })
+            }
           },
           fail: function (res) {
-            console.log(res)
+            wx.hideLoading();
+            console.log(res);
+            that.setData({
+              names: '小程序离家出走了稍后再试',
+            })
           }
         })
       }
