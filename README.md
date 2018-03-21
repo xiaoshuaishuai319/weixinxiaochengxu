@@ -9,7 +9,10 @@
 
 #image 一些需要的图片
 
-![小程序专属二维码](https://www.xsshome.cn/xcx.jpg "小程序专属二维码")
-![小程序截图](https://www.xsshome.cn/index.png "小程序截图")
-![新版截图](https://git.oschina.net/uploads/images/2017/0907/153234_9b2a70f4_131538.jpeg "index.jpg")
-![OCR截图](https://git.oschina.net/uploads/images/2017/0907/153252_dada7a51_131538.jpeg "ocr.jpg")
+![小程序二维码](https://gitee.com/uploads/images/2018/0321/085936_bcdcd3ae_131538.png "xcx.png")
+
+![主页截图](https://gitee.com/uploads/images/2018/0321/090054_9d11fa77_131538.jpeg "1.jpg")
+
+![演示截图](https://gitee.com/uploads/images/2018/0321/090107_f93e46e7_131538.jpeg "2.jpg")
+
+![演示截图](https://gitee.com/uploads/images/2018/0321/090136_82f99ae7_131538.jpeg "3.jpg")
