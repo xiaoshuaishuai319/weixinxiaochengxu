@@ -52,8 +52,13 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         //console.log( res )
         that.setData({
-          img: res.tempFilePaths[0]
-        })
+          img: res.tempFilePaths[0],
+          names: '',
+          scores: ''
+        }),
+          wx.showLoading({
+            title: "努力分析中..."
+          }),
         wx.uploadFile({
           url: 'https://www.xsshome.cn/xcx/uploadBCAR',
           filePath: res.tempFilePaths[0],
@@ -65,6 +70,7 @@ Page({
             'user': 'test'
           },
           success: function (res) {
+            wx.hideLoading();
             var data = res.data;
             var str = JSON.parse(data);
             console.log(str);
@@ -80,6 +86,7 @@ Page({
             }
           },
           fail: function (res) {
+            wx.hideLoading();
             console.log(res)
             that.setData({
               names: '小程序离家出走了稍后再试',
