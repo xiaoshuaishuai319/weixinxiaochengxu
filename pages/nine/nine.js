@@ -65,6 +65,12 @@ Page({
         name: '食材识别',
         url: '../../pages/ingredient/ingredient',
         icon: '../../image/ingredient_HL.png'
+      },
+      {
+        id: '10',
+        name: '自拍场景手势识别',
+        url: '../../pages/youtuHT/youtuHT',
+        icon: '../../image/youtuHT.png'
       }
     ]
   },
@@ -100,6 +106,10 @@ Page({
     } else if (route == 9){
       wx.navigateTo({
         url: '/pages/ingredient/ingredient',
+      })
+    } else if (route == 10){
+      wx.navigateTo({
+        url: '/pages/youtuHT/youtuHT',
       })
     } else {
       wx.showModal({
