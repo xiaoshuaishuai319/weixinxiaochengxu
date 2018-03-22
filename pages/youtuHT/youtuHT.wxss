@@ -1,0 +1,82 @@
+.image {
+  width: 100%;
+  height: 360rpx;
+}
+.container {
+  margin-top: -110px;
+  background-image: url("https://www.xsshome.cn/timg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: bottom;
+  background-position-x: right;
+}
+
+button {
+  font-family: 微软雅黑;
+}
+
+
+.page-body-info {
+  display: flex;
+  box-sizing: border-box;
+  padding: 30rpx;
+  height: 420rpx;
+  border-top: 1rpx solid #d9d9d9;
+  border-bottom: 1rpx solid #d9d9d9;
+  align-items: center;
+  justify-content: center;
+}
+
+.up {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: 微软雅黑;
+  width: 200px;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 25px;
+  background-color: rgb(26, 160, 225);
+}
+
+.user-motto {
+  font-family: 微软雅黑;
+}
+
+.user-names {
+  font-family: 微软雅黑;
+  color: rgb(123,243,211);
+}
+.user-calories{
+ font-family: 微软雅黑;
+ color: rgb(123,243,211);
+}
+.user-probabilitys{
+ font-family: 微软雅黑;
+ color: rgb(123,243,211); 
+}
+.user-remark {
+  font-family: 微软雅黑;
+  margin-top: 65px;
+}
+.dish{
+  float: left;
+  font-family: 微软雅黑;
+}
+.img_wrap {
+    margin-bottom: 10px;
+    width: 750rpx;
+    height: 468rpx;
+    background: #ececec;
+}
+
+image {
+    width: 100%;
+    height: 100%;
+    max-height: 1
+}
+.msg {
+    margin: 10px 0;
+    text-align: center;
+}
