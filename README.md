@@ -15,4 +15,6 @@
 
 ![二维码](https://gitee.com/uploads/images/2018/0321/090238_ec240de3_131538.jpeg "小程序二维码小.jpg")
 
-![主页截图](https://gitee.com/uploads/images/2018/0321/090616_88292cf2_131538.jpeg "1.jpg")![演示截图](https://gitee.com/uploads/images/2018/0321/090627_ac62a47f_131538.jpeg "2.jpg")![演示截图](https://gitee.com/uploads/images/2018/0321/090639_bbaa6a41_131538.jpeg "3.jpg")
+![主页截图](https://gitee.com/uploads/images/2018/0323/134831_646a6b01_131538.jpeg "1.jpg")![演示截图](https://gitee.com/uploads/images/2018/0321/090627_ac62a47f_131538.jpeg "演示截图")![演示截图](https://gitee.com/uploads/images/2018/0321/090639_bbaa6a41_131538.jpeg "演示截图")
+
+![手写文字识别](https://gitee.com/uploads/images/2018/0323/134845_c4ccd070_131538.jpeg "手写文字识别")![手势识别](https://gitee.com/uploads/images/2018/0323/134911_577fb731_131538.jpeg "手势识别")
