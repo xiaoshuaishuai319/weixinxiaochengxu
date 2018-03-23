@@ -71,6 +71,12 @@ Page({
         name: '自拍场景手势识别',
         url: '../../pages/youtuHT/youtuHT',
         icon: '../../image/youtuHT.png'
+      },
+      {
+        id: '11',
+        name: 'OCR手写文字识别',
+        url: '../../pages/youtuHW/youtuHW',
+        icon: '../../image/youtuHW.png'
       }
     ]
   },
@@ -111,7 +117,11 @@ Page({
       wx.navigateTo({
         url: '/pages/youtuHT/youtuHT',
       })
-    } else {
+    } else if (route == 11){
+      wx.navigateTo({
+        url: '/pages/youtuHW/youtuHW',
+      })
+    }else {
       wx.showModal({
         title: '温馨提示',
         content: '功能暂未开放，请点击别的功能试试',

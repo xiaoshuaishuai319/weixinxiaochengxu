@@ -12,7 +12,10 @@
     "pages/cardamage/cardamage",
     "pages/object/object",
     "pages/logo/logo",
-    "pages/resemble/resemble"
+    "pages/resemble/resemble",
+    "pages/ingredient/ingredient",
+    "pages/youtuHT/youtuHT",
+    "pages/youtuHW/youtuHW"
   ],
   "window":{
     "backgroundTextStyle":"light",

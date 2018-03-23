@@ -1,0 +1,8 @@
+ <view class="container">
+<view class="img_wrap">
+    <image src="{{ img }}" mode='aspectFit'/>
+</view>
+<button bindtap="uploads" class="up">拍照/选取图片识别</button>
+  <text class="user-names">{{names}}</text>
+  <view class="nickname">欢迎:{{userInfo.nickName}} 来访</view>
+ </view>
