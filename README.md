@@ -1,5 +1,5 @@
 #微信小程序-微信端源代码
- 
+#最新代码 https://gitee.com/xshuai/weixinxiaochengxu 
 
 ### **前后端交互目前没有做任何验证，代码也没有删除相关接口地址，大家在使用的时候请求不过多调用哦，以防服务器宕机** 
 
@@ -18,3 +18,11 @@
 ![主页截图](https://gitee.com/uploads/images/2018/0323/134831_646a6b01_131538.jpeg "1.jpg")![演示截图](https://gitee.com/uploads/images/2018/0321/090627_ac62a47f_131538.jpeg "演示截图")![演示截图](https://gitee.com/uploads/images/2018/0321/090639_bbaa6a41_131538.jpeg "演示截图")
 
 ![手写文字识别](https://gitee.com/uploads/images/2018/0323/134845_c4ccd070_131538.jpeg "手写文字识别")![手势识别](https://gitee.com/uploads/images/2018/0323/134911_577fb731_131538.jpeg "手势识别")
+
+### 人脸融合
+
+![人脸融合1](https://gitee.com/uploads/images/2018/0528/091126_a5e1e073_131538.jpeg "1.jpg")![人脸融合2](https://gitee.com/uploads/images/2018/0528/091139_49cf2a60_131538.jpeg "2.jpg")![人脸融合3](https://gitee.com/uploads/images/2018/0528/091153_18868301_131538.jpeg "3.jpg")
+
+### 人脸对比
+
+![人脸对比](https://gitee.com/uploads/images/2018/0530/163342_96241413_131538.gif "演示.gif")
