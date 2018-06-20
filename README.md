@@ -1,3 +1,6 @@
+[![Version](https://img.shields.io/badge/version-0.9.4.4-brightgreen.svg)](https://gitee.com/xshuai/weixinxiaochengxu/)
+[![作者](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-%E5%B0%8F%E5%B8%85%E4%B8%B6-7AD6FD.svg)](https://www.xsshome.cn/)
+
 #微信小程序-微信端源代码
 #最新代码 https://gitee.com/xshuai/weixinxiaochengxu 
 
