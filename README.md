@@ -1,9 +1,10 @@
-[![Version](https://img.shields.io/badge/version-1.0.1.0-brightgreen.svg)](https://gitee.com/xshuai/weixinxiaochengxu/)
+[![Version](https://img.shields.io/badge/version-1.0.3.0-brightgreen.svg)](https://gitee.com/xshuai/weixinxiaochengxu/)
 [![作者](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-%E5%B0%8F%E5%B8%85%E4%B8%B6-7AD6FD.svg)](https://www.xsshome.cn/xai)
+[![贡献者](https://img.shields.io/badge/%E8%B4%A1%E7%8C%AE%E8%80%85-%E5%87%A4%E5%85%AE-7AD6FD.svg)](https://www.xsshome.cn/xai)
+
+# 微信小程序-微信端源代码 
 
 # 最新代码 https://gitee.com/xshuai/weixinxiaochengxu 
-
-# 微信小程序-微信端源代码
  
 # 使用说明
 #### 下载源码 用微信开发工具打开  在 **utils-api.js** 替换自己的域名相关信息即可。
@@ -65,3 +66,8 @@
 
 ### 增加联系小帅功能
 ![联系小帅功能](https://gitee.com/uploads/images/2018/0703/094549_943bd258_131538.png "在线客服功能")
+
+### 新增百科内容截图
+
+![菜品识别](https://images.gitee.com/uploads/images/2018/0727/085300_ff7047a9_131538.jpeg "菜品识别")![车型识别](https://images.gitee.com/uploads/images/2018/0727/085319_7b2b3bc3_131538.jpeg "车型识别")![动物识别](https://images.gitee.com/uploads/images/2018/0727/085335_34fb1bfb_131538.jpeg "动物识别")
+
