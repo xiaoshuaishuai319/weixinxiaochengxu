@@ -3,7 +3,9 @@
 [![贡献者](https://img.shields.io/badge/%E8%B4%A1%E7%8C%AE%E8%80%85-%E5%87%A4%E5%85%AE-7AD6FD.svg)](https://gitee.com/lujianwen/)
 
 # 微信小程序-微信端源代码
- 
+
+# 最新代码更新在 https://gitee.com/xshuai/weixinxiaochengxu 
+
 # 使用说明
 #### 下载源码 用微信开发工具打开  在 **utils-api.js** 替换自己的域名相关信息即可。
 #### 后台代码:[https://gitee.com/xshuai/xai](https://gitee.com/xshuai/xai)
