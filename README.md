@@ -1,10 +1,8 @@
-[![Version](https://img.shields.io/badge/version-1.0.3.0-brightgreen.svg)](https://gitee.com/xshuai/weixinxiaochengxu/)
+[![Version](https://img.shields.io/badge/version-1.0.5.4-brightgreen.svg)](https://gitee.com/xshuai/weixinxiaochengxu/)
 [![作者](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-%E5%B0%8F%E5%B8%85%E4%B8%B6-7AD6FD.svg)](https://www.xsshome.cn/xai)
-[![贡献者](https://img.shields.io/badge/%E8%B4%A1%E7%8C%AE%E8%80%85-%E5%87%A4%E5%85%AE-7AD6FD.svg)](https://www.xsshome.cn/xai)
+[![贡献者](https://img.shields.io/badge/%E8%B4%A1%E7%8C%AE%E8%80%85-%E5%87%A4%E5%85%AE-7AD6FD.svg)](https://gitee.com/lujianwen/)
 
-# 微信小程序-微信端源代码 
-
-# 最新代码 https://gitee.com/xshuai/weixinxiaochengxu 
+# 微信小程序-微信端源代码
  
 # 使用说明
 #### 下载源码 用微信开发工具打开  在 **utils-api.js** 替换自己的域名相关信息即可。
@@ -42,6 +40,11 @@
        │       └── facedecoration          //人像变妆页面 
        │       └── facesticker             //大头贴页面 
        │       └── imgfilter               //人像、图片滤镜页面 	   
+       │       └── driverbehavior          //驾驶行为页面暂时没用 	 
+       │       └── landmark                //地标识别页面 	  
+       │       └── quickcalculation        //速算页面 	  
+       │       └── redwine                 //红酒识别页面 	   
+       │       └── skin                    //肤质分析页面    
        ├── utils                                
        │       └── api.js                 //全部的接口url在这里配置
        │       └── util.js                 //暂时没用       
@@ -58,7 +61,8 @@
 
 ![手写文字识别](https://gitee.com/uploads/images/2018/0323/134845_c4ccd070_131538.jpeg "手写文字识别")![手势识别](https://gitee.com/uploads/images/2018/0323/134911_577fb731_131538.jpeg "手势识别")
 ![文字识别](https://gitee.com/uploads/images/2018/0702/094502_005d2a2b_131538.jpeg "ocr.jpg")
-
+### 肤质分析
+![肤质分析](https://images.gitee.com/uploads/images/2018/1011/092423_c0618050_131538.jpeg "肤质分析")
 ### 人脸融合
 
 ![人脸融合1](https://gitee.com/uploads/images/2018/0528/091126_a5e1e073_131538.jpeg "1.jpg")![人脸融合2](https://gitee.com/uploads/images/2018/0528/091139_49cf2a60_131538.jpeg "2.jpg")![人脸融合3](https://gitee.com/uploads/images/2018/0528/091153_18868301_131538.jpeg "3.jpg")
@@ -79,7 +83,7 @@
 
 
 ### 图片转字符图片功能
-![图片转字符图片](https://wximage-1251091977.cos.ap-beijing.myqcloud.com/xai/%E9%A1%B5%E9%9D%A2%E5%BD%95%E5%B1%8F%E6%98%BE%E7%A4%BA.gif "图片转字符图片功能")
+![图片转字符图片](https://images.gitee.com/uploads/images/2019/0419/093716_f4633f42_131538.gif "图片转字符图片功能")
 
 ### 新增人像变妆、大头贴功能
 ![大头贴](https://images.gitee.com/uploads/images/2018/0913/101226_fabb8916_131538.jpeg "大头贴")  ![人像变妆](https://images.gitee.com/uploads/images/2018/0913/100610_472a55d2_131538.jpeg "人像变妆")
@@ -88,4 +92,4 @@
 ![人像、图片滤镜](https://images.gitee.com/uploads/images/2018/0913/100719_e429e6e7_131538.jpeg "人像、图片滤镜")  ![人像美妆](https://images.gitee.com/uploads/images/2018/0913/100551_8566afa3_131538.jpeg "人像美妆")
 
 ### 新增功能操作演示
-![功能操作演示](https://worknote-1251091977.cos.ap-beijing.myqcloud.com/%E5%8A%9F%E8%83%BD%E6%BC%94%E7%A4%BA.gif?q-sign-algorithm=sha1&q-ak=AKIDFmeFGGsk5YlIflBRf6xPGoKFP9EiB44m&q-sign-time=1536807830;1536809630&q-key-time=1536807830;1536809630&q-header-list=&q-url-param-list=&q-signature=236b760df97c979987228c81ead50f6c0ac2cfdd&x-cos-security-token=ddad0e84e561a0361cfd13d3b1824888b78bdbc710001&response-content-disposition=attachment "功能演示")
+![功能操作演示](https://worknote-1251091977.cos.ap-beijing.myqcloud.com/%E4%BA%BA%E8%84%B8%E5%AF%B9%E6%AF%94%E6%BC%94%E7%A4%BA.gif "功能演示")
